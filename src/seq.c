@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 #include "../include/seq.h"
 
 static void swap(int *a, int *b) {

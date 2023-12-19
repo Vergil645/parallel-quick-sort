@@ -49,13 +49,13 @@ int main(void) {
 
         array_orig = (int *) malloc(sizeof(int) * size);
         if (array_orig == NULL) {
-            printf("run[%d] FAIL: cannot allocate array of size %d\n", run_no, size);
+            printf("run[%d] FAIL: cannot allocate array of size %d\n", run_no + 1, size);
             return 101;
         }
 
         array_copy = (int *) malloc(sizeof(int) * size);
         if (array_copy == NULL) {
-            printf("run[%d] FAIL: cannot allocate array of size %d\n", run_no, size);
+            printf("run[%d] FAIL: cannot allocate array of size %d\n", run_no + 1, size);
             free(array_orig);
             return 102;
         }
@@ -79,21 +79,21 @@ int main(void) {
         ratio_sum += ratio[run_no];
 
         if (ret != 0) {
-            printf("run[%d] FAIL: sort_par exit with non-zero code %d\n", run_no, ret);
+            printf("run[%d] FAIL: sort_par exit with non-zero code %d\n", run_no + 1, ret);
             free(array_copy);
             free(array_orig);
             return ret;
         }
 
         if (!check_array_is_sorted(array_orig, size)) {
-            printf("run[%d] FAIL: array is not sorted after execution of sort_seq\n", run_no);
+            printf("run[%d] FAIL: array is not sorted after execution of sort_seq\n", run_no + 1);
             free(array_copy);
             free(array_orig);
             return 1;
         }
 
         if (!check_array_is_sorted(array_copy, size)) {
-            printf("run[%d] FAIL: array is not sorted after execution of sort_par\n", run_no);
+            printf("run[%d] FAIL: array is not sorted after execution of sort_par\n", run_no + 1);
             free(array_copy);
             free(array_orig);
             return 2;
@@ -102,7 +102,7 @@ int main(void) {
         free(array_copy);
         free(array_orig);
 
-        printf("run[%d] SUCCESS: sort_par is %.3f times faster than sort_seq\n", run_no, ratio[run_no]);
+        printf("run[%d] SUCCESS: sort_par is %.3f times faster than sort_seq\n", run_no + 1, ratio[run_no]);
     }
 
     ratio_avg = ratio_sum / RUN_COUNT;

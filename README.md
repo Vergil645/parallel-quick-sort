@@ -29,12 +29,12 @@ Parallel implementation on **4** processes is **~3 times faster** than sequentia
 
 ```sh
 $ CILK_NWORKERS=4 ./bin/compare
-run[0] SUCCESS: sort_par is 3.030 times faster than sort_seq
-run[1] SUCCESS: sort_par is 3.117 times faster than sort_seq
-run[2] SUCCESS: sort_par is 3.321 times faster than sort_seq
-run[3] SUCCESS: sort_par is 3.235 times faster than sort_seq
-run[4] SUCCESS: sort_par is 3.149 times faster than sort_seq
-RESULT: sort_par is faster than sort_seq on average 3.170 times
+run[1] SUCCESS: sort_par is 3.017 times faster than sort_seq
+run[2] SUCCESS: sort_par is 3.099 times faster than sort_seq
+run[3] SUCCESS: sort_par is 3.034 times faster than sort_seq
+run[4] SUCCESS: sort_par is 3.063 times faster than sort_seq
+run[5] SUCCESS: sort_par is 3.001 times faster than sort_seq
+RESULT: sort_par is faster than sort_seq on average 3.043 times
 ```
 
 ## Notes
